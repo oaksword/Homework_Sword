@@ -1,0 +1,51 @@
+---
+title: "标题"    #标题
+author: |
+    | 姓名       #姓名
+date: "`r format(Sys.time(), '%Y-%m-%d')`"    #日期，现在为当前日期
+documentclass: ctexart
+fontsize: 12pt    #正文字体大小
+geometry: tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm    #页边距
+output:
+#  pdf_document:  
+  rticles::ctex:
+    keep_tex: true
+    fig_caption: yes
+    number_sections: yes
+    toc: yes    #是否显示目录，现在为是
+    latex_engine: xelatex    #编译引擎，切勿更改
+classoption: "hyperref,"
+header-includes:             #引入的latex宏包
+  - \usepackage{fontspec, xunicode, xltxtra}    
+  - \usepackage{xeCJK,ctex}
+  - \usepackage{bm,xcolor}
+  - \usepackage{fancyhdr}
+  
+  - \pagestyle{fancy}
+#  - \fancyhead[L]{\textit{试验设计}}
+#  - \fancyhead[C]{上海数萃大数据学院}
+#  - \fancyhead[RE,RO]{}  
+#  - \fancyhead[LE,LO]{}
+#  - \fancyfoot[R]{\thepage}
+#  - \fancyfoot[C]{上海数萃大数据学院}  
+# 设置页眉线与页脚线宽度与颜色
+  - \renewcommand{\headrule}{{\color{red}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+  - \renewcommand{\footrule}{{\color{black}\vskip-\footruleskip\vskip-\footrulewidth \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+  - \renewcommand{\headrulewidth}{0.8pt}
+  - \renewcommand{\footrulewidth}{0.6pt}
+#  - \renewcommand\contentsname{\bfseries 目录}  
+# 定制章节标题格式 
+  - \usepackage[sf,raggedright]{titlesec}
+#  - \usepackage{titletoc}
+  - \titleformat{\section}{\bfseries\large\color{black}}{\bfseries\thesection}{0.5em}{}
+  - \titleformat{\subsection}{\bfseries\normalsize}{\bfseries\thesubsection}{0.5em}{}
+  - \titlespacing{\section}{0pt}{3.5ex plus .1ex minus .2ex}{1.5\wordsep}
+  - \titlespacing{\subsection}{0pt}{1.5ex plus .1ex minus .2ex}{\wordsep}
+# hyperline
+  - \hypersetup{colorlinks=true, breaklinks=true, linkcolor=blue}
+  - \usepackage{indentfirst}
+  - \setlength{\parindent}{0em}    #是否首行缩进，0em表示缩进0个字符距离（即不缩进）
+---
+
+\newpage
+
